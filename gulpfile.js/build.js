@@ -765,7 +765,7 @@ exports.templates = templates;
 exports.importAll = importAll;
 exports.importComponents = importComponents;
 exports.buildPlayground = buildPlayground;
-// exports.buildPixi = buildPixi;
+exports.buildPixi = buildPixi;
 exports.buildBoilerplate = buildBoilerplate;
 exports.buildFrontend = buildFrontend;
 exports.buildSamples = buildSamples;
@@ -777,7 +777,7 @@ exports.staticify = staticify;
 exports.unpackArtifacts = unpackArtifacts;
 exports.collectStatics = collectStatics;
 exports.whoAmI = whoAmI;
-// exports.buildPixiFunctions = buildPixiFunctions;
+exports.buildPixiFunctions = buildPixiFunctions;
 exports.buildFinalize = gulp.series(
   gulp.parallel(collectStatics, persistBuildInfo),
   thumborImageIndex
