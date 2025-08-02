@@ -1,19 +1,3 @@
-/**
- * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS-IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 'use strict';
 
 const {sh} = require('@lib/utils/sh.js');
@@ -32,19 +16,14 @@ const DEFAULT_DEPLOY_ENVIRONMENT = 'Staging';
 const SITES = {
   'Staging': [
     {
-      name: 'staging-amp-dev.netlify.app',
-      id: '75115d1b-a53a-4e0c-ac21-93930d604d0b',
+      name: 'bucolic-cat-e1baea.netlify.app',
+      id: '69bbcc85-2aad-4a49-be6f-b6caef14bf1a',
       dir: PAGES_DEST,
     },
     {
-      name: 'playground-staging-amp-dev.netlify.app',
-      id: 'a9f7ee74-0f49-49ff-9c2d-5cac85df3dc8',
+      name: 'playground-challangerdeep.netlify.app',
+      id: '71c6686d-ddf3-4be3-9f98-b716bd372a13',
       dir: `${DIST}/playground`,
-    },
-    {
-      name: 'preview-staging-amp-dev.netlify.app',
-      id: '8ade0d74-9b2c-4e8e-8d85-73e198208fba',
-      dir: `${DIST}/examples`,
     },
   ],
   'Production': [
