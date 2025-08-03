@@ -11,33 +11,35 @@ $ npm install
 
 ## Develop
 
-Bootstrap your local environment. To do so, make sure you have set up a valid [GitHub access token](https://github.com/settings/tokens) in an environment variable named `AMP_DOC_TOKEN` like so:
+Bootstrap local environment.
+Set a valid [GitHub access token](https://github.com/settings/tokens) in an environment variable named `AMP_DOC_TOKEN`
 
-```sh
-$ export AMP_DOC_TOKEN="c59f6..."
-```
-
-This command enables the import from GitHub to run flawlessly. The actual import occurs by running the following command.
+This command enables import from GitHub to run flawlessly. Import occurs by running following command.
 
 ```sh
 $ npm run bootstrap
 ```
 
-**Tip**: Due to bad network conditions or GitHub's API rate-limiting there might be errors during import. Try running the above command with the `-- --queue-imports` flag to prevent them.
+**Tip**: Due to bad network conditions or GitHub's API rate-limiting there might be errors during import.
+Try running the above command with the `-- --queue-imports` flag to prevent them.
 
-You can then start developing in your local environment with the command below. The task will take care of building and copying all files, watching them for changes, and rebuilding them when needed. Beware that changes to the [Express](https://expressjs.com/) backend require the Gulp task to be restarted.
+Start developing in local environment with command below.
+Task will take care of building and copying all files, watching them for changes, and rebuilding them when needed.
+Beware that changes to the [Express](https://expressjs.com/) backend require the Gulp task to be restarted.
 
 ```sh
 $ npm run develop
 ```
 
-This command prints a lot to the shell and will most likely end on `Server ready. Press ctrl-c to quit.`. Seeing this line means everything went fine so far unless otherwise stated in the logs; the site should be available at [http://localhost:8080/](http://localhost:8080/). The service running on port `8081` is only Grow rendering the pages.
+This command prints to shell and will most likely end on `Server ready. Press ctrl-c to quit.`.
+Seeing this line means everything went fine so far unless otherwise stated in the logs; the site should be available at [http://localhost:8080/](http://localhost:8080/). Service running on port `8081` is only Grow rendering the pages.
 
 ## Maintenance
 
 ### Documents
 
-Made changes to a lot of Grow documents at once and not quite sure if all references are still valid? You can run `npm run lint:grow` to pick up broken ones.
+Made changes to a lot of Grow documents at once and not quite sure if all references are still valid?
+You can run `npm run lint:grow` to pick up broken ones.
 
 ### Run a test build
 
@@ -48,7 +50,8 @@ $ npm run build:local
 $ npm run start:local
 ```
 
-**Tip**: For more rapid local testing, it may be preferable to only build a subset of specified locales. Run the following command with `--locales` being a comma seperated list of locale abbreviations you want to build, e.g. `en,fr` or even just `en`.
+**Tip**: For more rapid local testing, it may be preferable to only build a subset of specified locales.
+Run the following command with `--locales` being a comma seperated list of locale abbreviations you want to build, e.g. `en,fr` or even just `en`.
 
 ```sh
 npm run build:local -- --locales <list of locales>
@@ -56,13 +59,14 @@ npm run build:local -- --locales <list of locales>
 
 ## Build
 
-**Caution**: starting a build will automatically clean all locations of possible remainings from previous builds. Make sure you don't have anything there that you want to keep - additionally check your working copy for eventual unintended local changes.
+**Caution**: starting a build will automatically clean all locations of possible remainings from previous builds.
+Make sure you don't have anything there that you want to keep - additionally check your working copy for eventual unintended local changes.
 
 ```sh
 npm run build:local -- --locales <list of locales>
 ```
 
-To perform a build run the following command with `--env` being one of the following valid environments: `development`, `local`, `staging` or `production`:
+To perform a build run following command with `--env` being one of the following valid environments: `development`, `local`, `staging` or `production`:
 
 ```sh
 $ npx gulp build --env <environment>
@@ -82,9 +86,9 @@ The amp.dev site uses GitHub Actions for automated deployments to both staging a
 Deployments are triggered through GitHub Actions workflows:
 
 1. **Staging Deployment**: 
-   - Triggered automatically on pushes to the `main` branch
-   - Automatically builds and deploys to the staging environment
-   - View workflow status with the "Staging" badge at the top of this README
+   - Triggered automatically on pushes to `main` branch
+   - Automatically builds and deploys to staging environment
+   - View workflow status with "Staging" badge at top of this README
 
 2. **Production Deployment**:
    - **Manual deployment only** - no automatic triggers
@@ -94,9 +98,9 @@ Deployments are triggered through GitHub Actions workflows:
 
 To manually trigger a deployment (required for production):
 
-1. Navigate to the [deploy workflow](https://github.com/ampproject/amp.dev/actions/workflows/deploy.yaml) in the GitHub actions tab.
-2. Click "Run workflow" and choose the branch you want to deploy
+1. Navigate to [deploy workflow](https://github.com/ampproject/amp.dev/actions/workflows/deploy.yaml) in GitHub actions tab.
+2. Click "Run workflow" and choose branch you want to deploy
 3. Confirm the deployment
 
-**Note**: Ensure your changes have been properly tested in the staging environment before deploying to production.
+**Note**: Ensure changes have been properly tested in staging environment before deploying to production.
 
