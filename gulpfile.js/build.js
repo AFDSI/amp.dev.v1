@@ -26,7 +26,7 @@ const {whoAmI} = require('./whoAmI.js');
 const importAdVendorList = require('./import/importAdVendorList.js');
 const {thumborImageIndex} = require('./thumbor.js');
 const CleanCSS = require('clean-css');
-const {PIXI_CLOUD_ROOT} = require('@lib/utils/project').paths;
+// const {PIXI_CLOUD_ROOT} = require('@lib/utils/project').paths;
 const {copyFile} = require('fs/promises');
 const nunjucks = require('nunjucks');
 const {importBlog} = require('@lib/templates/ImportBlogFilter.js');
@@ -171,19 +171,19 @@ async function buildPlayground() {
  * Builds Pixi
  * @return {Promise}
  */
-async function buildPixi() {
-  await sh('mkdir -p pixi/dist');
-  return sh('npm run build:pixi');
-}
+// async function buildPixi() {
+//   await sh('mkdir -p pixi/dist');
+//   return sh('npm run build:pixi');
+// }
 
 /**
  * Builds the pixi cloud functions project
  */
-function buildPixiFunctions() {
-  return sh('npm install', {
-    workingDir: PIXI_CLOUD_ROOT,
-  });
-}
+// function buildPixiFunctions() {
+//   return sh('npm install', {
+//     workingDir: PIXI_CLOUD_ROOT,
+//   });
+// }
 
 /**
  * Builds the boilerplate generator
@@ -765,8 +765,8 @@ exports.templates = templates;
 exports.importAll = importAll;
 exports.importComponents = importComponents;
 exports.buildPlayground = buildPlayground;
-exports.buildPixi = buildPixi;
-exports.buildBoilerplate = buildBoilerplate;
+// exports.buildPixi = buildPixi;
+// exports.buildBoilerplate = buildBoilerplate;
 exports.buildFrontend = buildFrontend;
 exports.buildSamples = buildSamples;
 exports.zipTemplates = zipTemplates;
